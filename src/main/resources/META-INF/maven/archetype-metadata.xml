@@ -25,10 +25,6 @@ under the License.
         xsi:schemaLocation="https://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0 http://maven.apache.org/xsd/archetype-descriptor-1.1.0.xsd"
         name="${artifactId}">
 
-    <requiredProperties>
-        <requiredProperty key="moduleName"></requiredProperty>
-    </requiredProperties>
-
     <modules>
         <module id="${rootArtifactId}-project" dir="__rootArtifactId__-project" name="${rootArtifactId}-project">
             <fileSets>
