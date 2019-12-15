@@ -74,6 +74,17 @@ under the License.
     </fileSets>
 
     <modules>
+        <module id="${rootArtifactId}-dependency-parent" dir="__rootArtifactId__-dependency-parent" name="${rootArtifactId}-dependency-parent">
+            <fileSets>
+                <fileSet filtered="true" encoding="UTF-8">
+                    <directory />
+                    <includes>
+                        <include>**/*.md</include>
+                    </includes>
+                </fileSet>
+            </fileSets>
+        </module>
+
         <module id="${rootArtifactId}-project" dir="__rootArtifactId__-project" name="${rootArtifactId}-project">
             <fileSets>
                 <fileSet filtered="true" packaged="true" encoding="UTF-8">

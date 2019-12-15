@@ -4,19 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>${groupId}</groupId>
-        <artifactId>${rootArtifactId}-dependency-parent</artifactId>
-        <version>${version}</version>
-        <relativePath>../${rootArtifactId}-dependency-parent</relativePath>
-    </parent>
-
     <artifactId>${artifactId}</artifactId>
     <version>${version}</version>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
 
-    <name>${projectName}</name>
-    <description>${projectDescription}</description>
+    <name>${projectName} Dependency Parent</name>
+    <description>Parent POM allowing a central definition of dependency versions for the project with the name "${projectName}"</description>
     <url>${projectUrl}</url>
 
     <licenses>
@@ -53,28 +46,25 @@
         </repository>
     </distributionManagement>
 
-    <dependencies>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
+    <properties>
+
+        <!-- Test dependencies -->
+        <junit.version>4.12</junit.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-source-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-gpg-plugin</artifactId>
