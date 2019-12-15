@@ -25,6 +25,41 @@ under the License.
         xsi:schemaLocation="https://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0 http://maven.apache.org/xsd/archetype-descriptor-1.1.0.xsd"
         name="${artifactId}">
 
+    <requiredProperties>
+        <requiredProperty key="java_version">
+            <defaultValue>1.8</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="source_encoding">
+            <defaultValue>UTF-8</defaultValue>
+        </requiredProperty>
+
+        <requiredProperty key="projectName">
+            <defaultValue>Open Source Project</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="projectDescription">
+            <defaultValue>Open Source Sonatype Repository Hosting compliant project</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="projectUrl">
+            <defaultValue>https://central.sonatype.org/pages/ossrh-guide.html</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="licenseName">
+            <defaultValue>Apache License, Version 2.0</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="licenseUrl">
+            <defaultValue>http://www.apache.org/licenses/LICENSE-2.0.txt</defaultValue>
+        </requiredProperty>
+
+        <requiredProperty key="defaultDeveloperName"/>
+        <requiredProperty key="defaultDeveloperEmail"/>
+        <requiredProperty key="defaultDeveloperOrganizationName"/>
+        <requiredProperty key="defaultDeveloperOrganizationUrl"/>
+
+        <requiredProperty key="template_repository_id"/>
+        <requiredProperty key="template_repository_url"/>
+        <requiredProperty key="template_repository_snapshot_id"/>
+        <requiredProperty key="template_repository_snapshot_url"/>
+    </requiredProperties>
+
     <modules>
         <module id="${rootArtifactId}-project" dir="__rootArtifactId__-project" name="${rootArtifactId}-project">
             <fileSets>
