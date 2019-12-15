@@ -9,7 +9,7 @@
     <version>${version}</version>
     <packaging>pom</packaging>
 
-    <name>${projectName}</name>
+    <name>${projectName} Multi Module</name>
     <description>${projectDescription}</description>
     <url>${projectUrl}</url>
 
@@ -53,9 +53,38 @@
         <java.version>${java_version}</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
+
+        <!-- Plugin version -->
+        <nexus.staging.plugin.version>1.6.7</nexus.staging.plugin.version>
     </properties>
 
     <modules>
         <module>${rootArtifactId}-project</module>
     </modules>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.sonatype.plugins</groupId>
+                    <artifactId>nexus-staging-maven-plugin</artifactId>
+                    <version>${nexus.staging.plugin.version}</version>
+                    <extensions>true</extensions>
+                    <configuration>
+                        <serverId>ossrh</serverId>
+                        <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                        <!-- Set this to true and the release will automatically proceed and sync to Central Repository will follow  -->
+                        <autoReleaseAfterClose>false</autoReleaseAfterClose>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 </project>

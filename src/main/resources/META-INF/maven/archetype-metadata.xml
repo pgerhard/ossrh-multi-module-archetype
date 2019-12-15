@@ -56,9 +56,22 @@ under the License.
 
         <requiredProperty key="template_repository_id"/>
         <requiredProperty key="template_repository_url"/>
+        <requiredProperty key="template_repository_nexus_url"/>
         <requiredProperty key="template_repository_snapshot_id"/>
         <requiredProperty key="template_repository_snapshot_url"/>
+        <requiredProperty key="template_repository_snapshot_nexus_url"/>
+
+        <requiredProperty key="gpg_key_id"/>
     </requiredProperties>
+
+    <fileSets>
+        <fileSet filtered="true" encoding="UTF-8">
+            <directory />
+            <includes>
+                <include>**/*.md</include>
+            </includes>
+        </fileSet>
+    </fileSets>
 
     <modules>
         <module id="${rootArtifactId}-project" dir="__rootArtifactId__-project" name="${rootArtifactId}-project">
