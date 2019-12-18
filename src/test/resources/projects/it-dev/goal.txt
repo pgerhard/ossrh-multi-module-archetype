@@ -1,1 +1,1 @@
-clean verify -Pdev
+clean verify -Pdev -Dgpg.skip=true

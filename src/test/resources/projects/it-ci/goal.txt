@@ -1,1 +1,1 @@
-clean verify -Pci
+clean verify -Pci -Dgpg.skip=true

@@ -1,1 +1,1 @@
-clean install -Prelease
+clean install -Prelease -Dgpg.skip=true
