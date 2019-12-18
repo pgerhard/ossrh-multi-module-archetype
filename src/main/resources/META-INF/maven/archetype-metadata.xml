@@ -69,6 +69,8 @@ under the License.
             <directory />
             <includes>
                 <include>**/*.md</include>
+                <include>**/*.yml</include>
+                <include>**/settings-ci.xml</include>
             </includes>
         </fileSet>
     </fileSets>
