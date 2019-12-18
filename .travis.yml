@@ -1,0 +1,21 @@
+os: linux
+
+language: java
+
+cache:
+  directories:
+    - $HOME/.m2
+
+jdk:
+  - openjdk8
+
+# Export your private key using:
+# - macOS: 'gpg --export-secret-keys <KEY_ID> | base64'
+# - Linux: 'gpg --export-secret-keys <KEY_ID> | base64 -w 0'
+# Add the value to your repository as an env variable called $GPG_SECRET_KEYS
+before_install:
+  - echo $GPG_SECRET_KEYS | base64 --decode | $GPG_EXECUTABLE --import
+
+install: mvn --settings settings-ci.xml clean install -Pci -DskipTests=true -Dmaven.javadoc.skip=true -Dgpg.skip -B -V
+
+script: mvn --settings settings-ci.xml clean deploy -Pci -Dgpg.passphrase=$GPG_PASSPHRASE
